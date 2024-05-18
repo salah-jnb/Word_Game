@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Word_Game_By_Salah</title>
+</head>
+<body id="b" onload="dis_inp()">
+    <header id="h">
+        <h1 id="titre">Mot du jour</h1>
+        <a href="index.html" class="tab" id="home">
+            <svg
+              class="svgIcon"
+              viewBox="0 0 104 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M100.5 40.75V96.5H66V68.5V65H62.5H43H39.5V68.5V96.5H3.5V40.75L52 4.375L100.5 40.75Z"
+                stroke="black"
+                stroke-width="7"
+              ></path>
+            </svg>
+          </a>
+        <div id="nav">
+            <input type="checkbox" id="checkbox" class="clic" >
+            <label for="checkbox" class="toggle">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+            </label>        
+        </div>
+    
+    
+    </header>
+    <section id="s">
+        <nav id="menu">
+            <div class="btn-container">
+                <svg viewBox="0 0 16 16" class="bi bi-sun-fill" fill="currentColor" width="23" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" color="red"></path>
+                </svg>
+                <label class="switch btn-color-mode-switch">
+                    <input value="1" id="color_mode" name="color_mode" type="checkbox" onclick="mode()" class="clic">
+                    <label id="mdd" class="btn-color-mode-switch-inner" data-off="Lumière" data-on="Sombre" for="color_mode"></label>
+                </label>
+                <svg viewBox="0 0 16 16" class="bi bi-moon-stars-fill" fill="currentColor" width="23" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" color="orange"></path>
+                    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" color="black"></path>
+                </svg>
+            </div>
+            <div class="elmnt">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="checkbox1" class="clic">
+                    <div class="checkbox-custom1" id="music1" for="checkbox1" onclick="changebg('checkbox1', 'music1')"></div>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="checkbox2" class="clic">
+                    <div class="checkbox-custom2" id="son" for="checkbox2" onclick="changebg('checkbox2', 'son')"></div>
+                </label>
+            </div>
+            <div class="lang-menu">
+                <div class="selected-lang" id="lang">
+                    <p id="lgg">Langue</p>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#" id="fr" onclick="langue('fr')" class="clic">Francais</a>
+                    </li>
+                    <li>
+                        <a href="#" id="en" onclick="langue('an')" class="clic">Anglais</a>
+                    </li>
+                </ul>
+                
+            </div>
+            
+            
+            <div class="col-6 nav-social">
+                <a href="https://www.instagram.com/jendoubi_salaheddine?igsh=MWM1cjU1YzllZ25sYg%3D%3D&utm_source=qr"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/jendoubi.salaheddine?mibextid=LQQJ4d"><i class="fa fa-facebook-official"></i></a>
+                <a href="mailto:salaheddinejendoubi2.com"><i class="fa fa-envelope"></i></a>
+                <a href="https://wa.me/23054310"><i class="fa fa-whatsapp"></i></a>
+              </div>
+            
+        </nav>
+        <div class="grille">
+            
+        <table id="tt">
+            <tr><td colspan="5"><p id="es">Trouver le mot en 6 essais</p></td></tr>  
+            <tr>
+                <td><input type="text" id="a1" maxlength="1" onkeyup="clicker(null,'a1','a2',event)"></td>
+                <td><input type="text" id="a2" maxlength="1" onkeyup="clicker('a1','a2','a3',event)"></td>
+                <td><input type="text" id="a3" maxlength="1" onkeyup="clicker('a2','a3','a4',event)"></td>
+                <td><input type="text" id="a4" maxlength="1" onkeyup="clicker('a3','a4','a5',event)"></td>
+                <td><input type="text" id="a5" maxlength="1" onkeyup="clicker('a4','a5',null,event)"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="b1" maxlength="1" onkeyup="clicker(null,'b1','b2',event)"></td>
+                <td><input type="text" id="b2" maxlength="1" onkeyup="clicker('b1','b2','b3',event)"></td>
+                <td><input type="text" id="b3" maxlength="1" onkeyup="clicker('b2','b3','b4',event)"></td>
+                <td><input type="text" id="b4" maxlength="1" onkeyup="clicker('b3','b4','b5',event)"></td>
+                <td><input type="text" id="b5" maxlength="1" onkeyup="clicker('b4','b5',null,event)"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="c1" maxlength="1" onkeyup="clicker(null,'c1','c2',event)"></td>
+                <td><input type="text" id="c2" maxlength="1" onkeyup="clicker('c1','c2','c3',event)"></td>
+                <td><input type="text" id="c3" maxlength="1" onkeyup="clicker('c2','c3','c4',event)"></td>
+                <td><input type="text" id="c4" maxlength="1" onkeyup="clicker('c3','c4','c5',event)"></td>
+                <td><input type="text" id="c5" maxlength="1" onkeyup="clicker('c4','c5',null,event)"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="d1" maxlength="1" onkeyup="clicker(null,'d1','d2',event)"></td>
+                <td><input type="text" id="d2" maxlength="1" onkeyup="clicker('d1','d2','d3',event)"></td>
+                <td><input type="text" id="d3" maxlength="1" onkeyup="clicker('d2','d3','d4',event)"></td>
+                <td><input type="text" id="d4" maxlength="1" onkeyup="clicker('d3','d4','d5',event)"></td>
+                <td><input type="text" id="d5" maxlength="1" onkeyup="clicker('d4','d5',null,event)"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="e1" maxlength="1" onkeyup="clicker(null,'e1','e2',event)"></td>
+                <td><input type="text" id="e2" maxlength="1" onkeyup="clicker('e1','e2','e3',event)"></td>
+                <td><input type="text" id="e3" maxlength="1" onkeyup="clicker('e2','e3','e4',event)"></td>
+                <td><input type="text" id="e4" maxlength="1" onkeyup="clicker('e3','e4','e5',event)"></td>
+                <td><input type="text" id="e5" maxlength="1" onkeyup="clicker('e3','e4',null,event)"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="f1" maxlength="1" onkeyup="clicker(null,'f1','f2',event)"></td>
+                <td><input type="text" id="f2" maxlength="1" onkeyup="clicker('f1','f2','f3',event)"></td>
+                <td><input type="text" id="f3" maxlength="1" onkeyup="clicker('f2','f3','f4',event)"></td>
+                <td><input type="text" id="f4" maxlength="1" onkeyup="clicker('f3','f4','f5',event)"></td>
+                <td><input type="text" id="f5" maxlength="1" onkeyup="clicker('f4','f5',null,event)"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="keyboard" id="keyboard">
+        <div class="row">
+            <button class="btn">A</button>
+            <button class="btn">Z</button>
+            <button class="btn">E</button>
+            <button class="btn">R</button>
+            <button class="btn">T</button>
+            <button class="btn">Y</button>
+            <button class="btn">U</button>
+            <button class="btn">I</button>
+            <button class="btn">O</button>
+            <button class="btn">P</button>
+            <button class="entrer">⮐</button>
+        </div>
+        <div class="row">
+            <button class="btn">Q</button>
+            <button class="btn">S</button>
+            <button class="btn">D</button>
+            <button class="btn">F</button>
+            <button class="btn">G</button>
+            <button class="btn">H</button>
+            <button class="btn">J</button>
+            <button class="btn">K</button>
+            <button class="btn">L</button>
+            <button class="btn">M</button>
+        </div>
+        <div class="row">
+            <button class="btn">W</button>
+            <button class="btn">X</button>
+            <button class="btn">C</button>
+            <button class="btn">V</button>
+            <button class="btn">B</button>
+            <button class="btn">N</button>
+            <button class="delete">⌫</button>
+        </div>
+    </div>
+    </section>
+    <footer id="f">
+        <p id="cr">© Copyright- 2024 - Jendoubi Salaheddine - <span id="r">Tous droits réservés</span></p>
+        <audio id="clickSound" src="son/click.mp3"></audio>
+        
+        <div id="mc">
+            <input type="checkbox" id="checkbox3"onclick="handleMicCheckbox()" checked class="clic">
+            <label class="switch_mic" for="checkbox3" id="micc">
+                <div class="mic-on">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-mic-fill" viewBox="0 0 16 16"> <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"></path> <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"></path> </svg>
+                </div>
+                <div class="mic-off">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-mic-mute-fill" viewBox="0 0 16 16"> <path d="M13 8c0 .564-.094 1.107-.266 1.613l-.814-.814A4.02 4.02 0 0 0 12 8V7a.5.5 0 0 1 1 0v1zm-5 4c.818 0 1.578-.245 2.212-.667l.718.719a4.973 4.973 0 0 1-2.43.923V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 1 0v1a4 4 0 0 0 4 4zm3-9v4.879L5.158 2.037A3.001 3.001 0 0 1 11 3z"></path> <path d="M9.486 10.607 5 6.12V8a3 3 0 0 0 4.486 2.607zm-7.84-9.253 12 12 .708-.708-12-12-.708.708z"></path> </svg>
+                </div>
+            </label>
+            <img src="image/keyboard.png" width="38px" height="28px" id="cl" alt="" onclick="keyboard()" class="clic">
+        </div>
+    </footer>
+</body>
+</html>
